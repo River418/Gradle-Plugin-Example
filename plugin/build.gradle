@@ -1,0 +1,21 @@
+apply plugin:'groovy'
+apply plugin:'maven'
+
+version = VERSION_NAME
+group = POM_GROUP
+
+dependencies {
+    compile gradleApi()
+    compile localGroovy()
+}
+
+uploadArchives{
+    repositories{
+        mavenDeployer{
+            pom.groupId = POM_GROUP
+            pom.artifactId = POM_ARTIFACT_ID
+            pom.version = VERSION_NAME
+            repository(url:uri('../repo'))
+        }
+    }
+}

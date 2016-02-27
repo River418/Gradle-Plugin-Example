@@ -1,0 +1,3 @@
+task pluginScript(description:"a script plugin task")<<{
+    println 'this is a script plugin'
+}

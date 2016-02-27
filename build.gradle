@@ -1,0 +1,16 @@
+apply from: 'plugin.gradle'
+apply plugin: 'me.river.gradleplugin'
+buildscript {
+    repositories {
+        maven{
+            url uri('repo')
+        }
+    }
+    dependencies{
+        classpath('me.river.gradleplugin:GradlePlugin:1.0.0')
+    }
+}
+task buildScript(description:"this is a example task in project")<<{
+    println 'this is a example task in project'
+}
+buildScript.dependsOn pluginScript
